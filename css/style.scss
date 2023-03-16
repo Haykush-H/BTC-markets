@@ -10,7 +10,8 @@ $red : #f43f5e;
 $darkGray : #71717a;
 $lightGray : #a1a1aa;
 $greyBorder : #f4f4f5;
-$backgroundGray: #FAFAFA;
+$backgroundGray : #FAFAFA;
+$hrGray: #D4D4D8;
 
 $tablet : 1024px;
 $mobileL : 768px;
@@ -231,7 +232,7 @@ header {
 
         a {
           display: block;
-          padding: 9px 33px;
+          padding: 10px 34px;
           border-radius: $br;
           text-decoration: none;
 
@@ -479,205 +480,187 @@ main {
 
   }
 
-  .trade__section {
+  .template__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
     margin-bottom: 128px;
 
-    h4 {
-      color: $firstBlack;
-      font-size: 16px;
-      font-weight: 400;
-    }
-
-    .trade__section__blocks {
-      display: flex;
-      justify-content: space-between;
-      gap: 32px;
-
-
-
-
-
-      @media screen and (max-width:$tablet) {
-        flex-wrap: wrap;
-
-        .trade__section__right {
-          .trade__section__right__img {
-            img {
-              width: 100%;
-            }
-          }
-        }
-      }
-
-      @media screen and (max-width:$mobileM) {
-        .trade__section__left {
-          h2 {
-            text-align: center;
-          }
-
-          .trade__items {
-            .trade__item {
-              flex: 1 1 100%;
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.template__section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
-  margin-bottom: 128px;
-
-  &:nth-child(odd) {
-    .template__section__content {
-      order: 2;
-    }
-
-    .template__section__cover {
-      order: 1;
-    }
-
-    @media screen and (max-width: $tablet) {
+    &:nth-child(odd) {
       .template__section__content {
-        order: 1;
+        order: 2;
       }
 
       .template__section__cover {
-        order: 2;
+        order: 1;
+      }
+
+      @media screen and (max-width: $tablet) {
+        .template__section__content {
+          order: 1;
+        }
+
+        .template__section__cover {
+          order: 2;
+        }
+      }
+    }
+
+    .template__section__content {
+      flex: 1 1 550px;
+
+      h4 {
+        font-weight: 400;
+        color: $firstBlack;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: min(40px, max(20px + 2vw));
+        color: $firstBlack;
+        font-weight: 400;
+      }
+
+      .template__section__content__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 64px;
+        gap: 32px;
+
+        .template__section__content__item {
+          flex: 1 1 calc(100%/3);
+
+          h6 {
+            font-size: 16px;
+            color: $firstBlack;
+            font-weight: 400;
+            margin: 8px 0px 16px 0px;
+          }
+
+          p {
+            color: $secondBlack;
+            font-size: 15px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    .template__section__cover {
+      flex: 1 1 550px;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+
+      .template__section__cover {
+        img {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileM) {
+      .template__section__content {
+        h2 {
+          text-align: center;
+        }
+
+        .template__section__content__items {
+          .template__section__content__item {
+            flex: 1 1 100%;
+            text-align: center;
+          }
+        }
       }
     }
   }
 
-  .template__section__content {
-    flex: 1 1 550px;
+  .vip__program__section {
+    background: $backgroundGray;
+    padding-top: 128px;
 
-    h4 {
-      font-weight: 400;
-      color: $firstBlack;
-      font-size: 16px;
-      text-transform: uppercase;
-    }
+    .container {
+      .vip__program__section__content {
+        max-width: 710px;
+        margin: 0 auto;
+        text-align: center;
+        color: $firstBlack;
 
-    h2 {
-      font-size: min(40px, max(20px + 2vw));
-      color: $firstBlack;
-      font-weight: 400;
-    }
-
-    .template__section__content__items {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 64px;
-      gap: 32px;
-
-      .template__section__content__item {
-        flex: 1 1 calc(100%/3);
-
-        h6 {
+        h4 {
           font-size: 16px;
-          color: $firstBlack;
+          margin: 0;
           font-weight: 400;
-          margin: 8px 0px 16px 0px;
+        }
+
+        h2 {
+          font-weight: 400;
+          font-size: min(40px, max(20px + 2vw));
+          letter-spacing: 0.1px;
+          margin: 16px 0px 32px 0px;
         }
 
         p {
           color: $secondBlack;
-          font-size: 15px;
           line-height: 24px;
+          letter-spacing: 0.2px;
+          margin-bottom: 48px;
         }
-      }
-    }
-  }
 
-  .template__section__cover {
-    flex: 1 1 550px;
-
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
- 
-  @media screen and (max-width: $tablet) {
-    flex-wrap: wrap;
-
-    .template__section__cover {
-      img {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    }
-  }
-
-  @media screen and (max-width: $mobileM) {
-    .template__section__content {
-      h2 {
-        text-align: center;
-      }
-
-      .template__section__content__items {
-        .template__section__content__item {
-          flex: 1 1 100%;
-          text-align: center;
-        }
-      }
-    }
-  }
-}
-
-.vip__program__section {
-  background: $backgroundGray;
-  padding-top: 128px;
-
-  .container {
-    .vip__program__section__content {
-      max-width: 710px;
-      margin: 0 auto;
-      text-align: center;
-      color: $firstBlack;
-
-      h4 {
-        font-size: 16px;
-        margin: 0;
-        font-weight: 400;
-      }
-
-      h2 {
-        font-weight: 400;
-        font-size: min(40px, max(20px + 2vw));
-        letter-spacing: 0.1px;
-        margin: 16px 0px 32px 0px;
-      }
-
-      p {
-        color: $secondBlack;
-        line-height: 24px;
-        letter-spacing: 0.2px;
-        margin-bottom: 48px;
-      }
-
-      .vip__program__section__items {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 64px;
-        margin-bottom: 64px;
-
-        .vip__program__section__item {
+        .vip__program__section__items {
           display: flex;
+          justify-content: center;
           align-items: center;
-          gap: 8px;
+          gap: 64px;
+          margin-bottom: 64px;
 
-          h6 {
-            font-size: 16px;
-            font-weight: 400;
-            margin: 0;
+          .vip__program__section__item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            h6 {
+              font-size: 16px;
+              font-weight: 400;
+              margin: 0;
+            }
+          }
+
+          a {
+            display: block;
+            text-decoration: none;
+            padding: 9px 36px;
+            color: $firstBlack;
+            border: 1px solid $firstBlack;
+            border-radius: $br;
+            width: fit-content;
+            margin: 0px auto 64px auto;
+          }
+
+          @media screen and (max-width: $mobileL) {
+            flex-wrap: wrap;
+          }
+
+          @media screen and (max-width: $mobileM) {
+            gap: 32px;
+          }
+
+          @media screen and (max-width: $mobileXS) {
+            .vip__program__section__item {
+              gap: 4px;
+
+              h6 {
+                font-size: 15px;
+              }
+            }
           }
         }
 
@@ -691,19 +674,63 @@ main {
           width: fit-content;
           margin: 0px auto 64px auto;
         }
+      }
 
-        @media screen and (max-width: $mobileL) {
-          flex-wrap: wrap;
+      .vip__program__section__cover {
+        img {
+          display: block;
+          width: 100%;
         }
+      }
+    }
+  }
 
-        @media screen and (max-width: $mobileM) {
-          gap: 32px;
-        }
+  .start__trading__section {
+    padding: 128px 32px 106px;
 
-        @media screen and (max-width: $mobileXS) {
-          .vip__program__section__item {
-            gap: 4px;
-            h6 {
+    .start__trading__section__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 132px;
+
+      h3 {
+        max-width: 395px;
+        font-weight: 400;
+        font-size: min(48px, max(24px + 2vw));
+        line-height: 48px;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      .start__trading__section__items {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 96px;
+        margin: 108px 0px 46px 0px;
+
+        .start__trading__section__item {
+
+          h4 {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 400;
+            margin: 35px 0px 18px 0px;
+            color: $firstBlack;
+          }
+
+          p {
+            max-width: 257px;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: $secondBlack;
+          }
+
+          &:nth-child(2) {
+            p {
               font-size: 15px;
             }
           }
@@ -712,52 +739,156 @@ main {
 
       a {
         display: block;
-        text-decoration: none;
-        padding: 9px 36px;
-        color: $firstBlack;
-        border: 1px solid $firstBlack;
+        padding: 10px 34px;
         border-radius: $br;
-        width: fit-content;
-        margin: 0px auto 64px auto;
+        text-decoration: none;
+        background: $primary;
+        color: $greenBlack;
+        margin-bottom: 32px;
+      }
+
+      .stars {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $secondBlack;
+
+        div {
+          &:last-child {
+            font-size: 14px;
+          }
+        }
+      }
+
+      @media screen and (max-width:$mobileL) {
+        padding-bottom: 64px;
+
+        .start__trading__section__items {
+          gap: 32px;
+          margin: 64px 0px 32px 0px;
+
+          .start__trading__section__item {
+            h4 {
+              margin: 24px 0px 8px 0px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width:$mobileS) {
+        .start__trading__section__items {
+          flex-wrap: wrap;
+          gap: 16px;
+
+          .start__trading__section__item {
+            h4 {
+              margin: 16px 0px 8px;
+            }
+          }
+        }
       }
     }
 
-    .vip__program__section__cover {
-      img {
+    .start__trading__section__bottom {
+      padding-top: 192px;
+
+      h3 {
+        font-size: min(46px, max(23px + 2vw));
+        line-height: 48px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      p {
+        max-width: 517px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+        color: $secondBlack;
+        margin: 24px 0px;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 36px;
+
+        .icon {
+          .stars {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding-top: 19px;
+
+            div {
+              &:last-child {
+                font-size: 14px;
+                padding-left: 7px;
+              }
+            }
+          }
+        }
+      }
+
+      a {
         display: block;
-        width: 100%;
+        font-size: 16px;
+        line-height: 20px;
+        text-decoration: none;
+        padding-top: 32px;
+        color: $firstBlack;
       }
-    }
-  }
-}
 
-@media screen and (max-width: $mobileL) {
-
-  .markets__section,
-  .template__section {
-    margin-bottom: 64px;
-  }
-
-  .template__section {
-    .template__section__content {
-      h4 {
+      @media screen and (max-width:$mobileL) {
+        padding-top: 64px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        p {
+          max-width: fit-content;
+        }
+      }
+    }
+
+    @media screen and (max-width:$mobileS) {
+      padding: 96px 32px;
+    }
+
+  }
+
+  @media screen and (max-width: $mobileL) {
+
+    .markets__section,
+    .template__section {
+      margin-bottom: 64px;
+    }
+
+    .template__section {
+      .template__section__content {
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+
+    .markets__section {
+      .why__btc__markets {
+        .wbm__items {
+          gap: 32px;
+        }
       }
     }
   }
 
-  .markets__section {
-    .why__btc__markets {
-      .wbm__items {
-        gap: 32px;
-      }
-    }
+  hr {
+    height: 1px;
+    background: $hrGray;
   }
 }
-
-
-
-
 
 
 
