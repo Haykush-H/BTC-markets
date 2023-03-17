@@ -827,7 +827,18 @@ main .create__account__section a {
   text-decoration: none;
   color: #01271c;
   padding: 9px 33px 10px;
+  text-align: center;
   background: #4cfdc7;
+}
+@media screen and (max-width: 768px) {
+  main .create__account__section {
+    padding: 192px 0px 128px 0px;
+    text-align: center;
+  }
+  main .create__account__section h3 {
+    font-size: 32px;
+    margin: 0 auto 32px auto;
+  }
 }
 @media screen and (max-width: 768px) {
   main .markets__section,
@@ -844,6 +855,96 @@ main .create__account__section a {
 main hr {
   height: 1px;
   background: #D4D4D8;
+}
+
+footer .footer__section .footer__section__logo {
+  padding-bottom: 64px;
+}
+footer .footer__section .footer__section__content {
+  display: flex;
+  gap: 128px;
+}
+footer .footer__section .footer__section__content div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .footer__section .footer__section__content div h6 {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #181818;
+}
+footer .footer__section .footer__section__content div a {
+  text-decoration: none;
+  color: #3f3f46;
+  font-size: 12px;
+  line-height: 21px;
+}
+footer .footer__section .footer__section__content div div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+footer .footer__section .footer__section__content div img:first-of-type {
+  max-width: 72px;
+}
+footer .footer__section .footer__section__content div img:last-of-type {
+  max-width: 81px;
+}
+@media screen and (max-width: 1024px) {
+  footer .footer__section .footer__section__content {
+    gap: 88px;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .footer__section .footer__section__content {
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 580px) {
+  footer .footer__section .footer__section__content {
+    gap: 16px;
+  }
+  footer .footer__section .footer__section__content div {
+    gap: 8px;
+  }
+  footer .footer__section .footer__section__content div img:first-of-type {
+    max-width: 62px;
+  }
+  footer .footer__section .footer__section__content div img:last-of-type {
+    max-width: 71px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .footer__section .footer__section__content {
+    flex-wrap: wrap;
+    gap: 32px;
+    flex: 1 1 50%;
+  }
+}
+footer .footer__section .footer__section__info {
+  padding: 160px 0px 64px 0px;
+  text-align: center;
+}
+footer .footer__section .footer__section__info span,
+footer .footer__section .footer__section__info p {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+}
+footer .footer__section .footer__section__info span:nth-child(1) {
+  padding-left: 21px;
+}
+footer .footer__section .footer__section__info p {
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  footer .footer__section .footer__section__info {
+    padding: 96px 0px 32px 0px;
+  }
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

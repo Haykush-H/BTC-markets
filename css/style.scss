@@ -1046,7 +1046,18 @@ main {
       text-decoration: none;
       color: $greenBlack;
       padding: 9px 33px 10px;
+      text-align: center;
       background: $primary;
+    }
+
+    @media screen and (max-width: $mobileL) {
+      padding: 192px 0px 128px 0px;
+      text-align: center;
+
+      h3 {
+        font-size: 32px;
+        margin: 0 auto 32px auto;
+      }
     }
   }
 
@@ -1098,7 +1109,115 @@ main {
   }
 }
 
+footer {
+  .footer__section {
+    .footer__section__logo {
+      padding-bottom: 64px;
+    }
 
+    .footer__section__content {
+      display: flex;
+      gap: 128px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h6 {
+          font-size: 12px;
+          line-height: 12px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: $firstBlack;
+        }
+
+        a {
+          text-decoration: none;
+          color: $footerBlack;
+          font-size: 12px;
+          line-height: 21px;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          gap: 8px;
+
+        }
+
+        img {
+          &:first-of-type {
+            max-width: 72px;
+          }
+
+          &:last-of-type {
+            max-width: 81px;
+          }
+        }
+      }
+
+      @media screen and (max-width:$tablet) {
+        gap: 88px;
+      }
+
+      @media screen and (max-width:$mobileL) {
+        gap: 32px;
+      }
+
+      @media screen and (max-width:$mobileM) {
+        gap: 16px;
+
+        div {
+          gap: 8px;
+
+          img {
+            &:first-of-type {
+              max-width: 62px;
+            }
+
+            &:last-of-type {
+              max-width: 71px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width:$mobileS) {
+        flex-wrap: wrap;
+        gap: 32px;
+        flex: 1 1 50%;
+      }
+    }
+
+    .footer__section__info {
+      padding: 160px 0px 64px 0px;
+      text-align: center;
+
+      span,
+      p {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 1px;
+      }
+
+      span {
+        &:nth-child(1) {
+          padding-left: 21px;
+        }
+      }
+
+      p {
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width:$mobileL) {
+        padding: 96px 0px 32px 0px;
+      }
+    }
+  }
+}
 
 
 
