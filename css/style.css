@@ -662,6 +662,173 @@ main .start__trading__section .start__trading__section__bottom a {
     padding: 96px 32px;
   }
 }
+main .crypto__news__section {
+  padding-top: 128px;
+}
+main .crypto__news__section h3 {
+  font-size: 31px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #181818;
+  margin: 0;
+  text-align: center;
+}
+main .crypto__news__section .crypto__news__section__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 64px 0px;
+}
+main .crypto__news__section .crypto__news__section__items .news__item {
+  box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
+  border-radius: 8px;
+  max-width: 357px;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__cover img {
+  display: block;
+  width: 100%;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content {
+  padding: 16px 0px 32px 16px;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info h5 {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #181818;
+  background: #BDFFEB;
+  padding: 2px 8px 6px;
+  margin: 0;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info span {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #181818;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content h3 {
+  font-size: 24px;
+  line-height: 30px;
+  text-align: left;
+  color: #181818;
+  font-weight: 400;
+  margin: 22px 0px 32px 0px;
+  max-width: 300px;
+  min-height: 60px;
+}
+main .crypto__news__section .crypto__news__section__items .news__item .news__item__content a {
+  text-decoration: none;
+  color: #181818;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+}
+@media screen and (max-width: 890px) {
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content {
+    padding: 8px 0px 24px 4px;
+  }
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info {
+    gap: 8px;
+  }
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info h5,
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content .news__item__content__info span {
+    font-size: 10px;
+  }
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content h3 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 8px 0px 16px 0px;
+  }
+  main .crypto__news__section .crypto__news__section__items .news__item .news__item__content a {
+    margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 850px) {
+  main .crypto__news__section .crypto__news__section__items {
+    gap: 8px;
+  }
+}
+@media screen and (max-width: 685px) {
+  main .crypto__news__section .crypto__news__section__items {
+    flex-wrap: wrap;
+    margin: 32px;
+  }
+}
+main .crypto__news__section a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
+  color: #181818;
+  margin-bottom: 64px;
+}
+main .crypto__news__section .crypto__news__section__social__media {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 32px;
+}
+main .crypto__news__section .crypto__news__section__social__media div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+main .crypto__news__section .crypto__news__section__social__media div h5 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #181818;
+  margin: 8px;
+}
+@media screen and (max-width: 768px) {
+  main .crypto__news__section .crypto__news__section__social__media {
+    gap: 16px;
+  }
+  main .crypto__news__section .crypto__news__section__social__media h5 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main .crypto__news__section {
+    padding-top: 64px;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .crypto__news__section a {
+    margin-bottom: 32px;
+  }
+}
+main .create__account__section {
+  padding: 224px 0px 224px 88px;
+}
+main .create__account__section h3 {
+  font-size: 46px;
+  line-height: 48px;
+  font-weight: 400;
+  max-width: 480px;
+  letter-spacing: 1px;
+  margin: 0px 0px 48px;
+}
+main .create__account__section a {
+  margin-top: 48px;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  color: #01271c;
+  padding: 9px 33px 10px;
+  background: #4cfdc7;
+}
 @media screen and (max-width: 768px) {
   main .markets__section,
   main .template__section {
