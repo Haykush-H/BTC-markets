@@ -29,6 +29,22 @@ $tablePadding : 16px 0px;
 
 body {
   font-family: "regular", sans-serif;
+
+  &::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 }
 
 .container {
@@ -72,11 +88,44 @@ nav {
           list-style-type: none;
 
           a {
+            position: relative;
+            transition: 0.3s;
             color: $firstBlack;
             text-decoration: none;
 
+            &::before {
+              content: "";
+              width: 0%;
+              height: 3px;
+              position: absolute;
+              bottom: -10px;
+              border-radius: $br;
+              background: $primary;
+              transition: 0.3s;
+            }
+
+            &::after {
+              content: "";
+              width: 0%;
+              height: 3px;
+              position: absolute;
+              bottom: -10px;
+              right: 0px;
+              border-radius: $br;
+              background: $primary;
+              transition: 0.3s;
+            }
+
             &:hover {
               color: $primary;
+
+              &::before {
+                width: 50%;
+              }
+
+              &::after {
+                width: 50%;
+              }
             }
           }
         }
@@ -92,16 +141,29 @@ nav {
           cursor: pointer;
           font-size: 12px;
           color: $firstBlack;
+          transition: 0.3s;
 
           &#login {
             border: 1px solid $firstBlack;
             background: transparent;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
 
           &#signup {
             border: 1px solid $primary;
             background: $primary;
             color: $greenBlack;
+
+            &:hover {
+              background: $green;
+              border-color: $green;
+              color: #fff;
+            }
           }
         }
 
@@ -235,16 +297,29 @@ header {
           padding: 10px 34px;
           border-radius: $br;
           text-decoration: none;
+          transition: 0.3s;
 
           &:nth-child(1) {
             background: $primary;
             color: $greenBlack;
+
+            &:hover {
+              background: $green;
+              border-color: $green;
+              color: #fff;
+            }
           }
 
           &:nth-child(2) {
             background: transparent;
             color: $firstBlack;
             border: 1px solid $firstBlack;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
         }
       }
@@ -334,6 +409,22 @@ main {
         overflow-y: hidden;
         overflow-x: auto;
 
+        &::-webkit-scrollbar {
+          height: 8px;
+        }
+      
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+      
+        &::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+      
+        &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
         table {
           border-collapse: collapse;
           width: 100%;
@@ -379,6 +470,7 @@ main {
 
                 a {
                   display: block;
+                  width: 54px;
                   text-decoration: none;
                   padding: $tablePadding;
                   background: $primary;
@@ -386,6 +478,14 @@ main {
                   color: $greenBlack;
                   cursor: pointer;
                   text-align: center;
+                  margin: 0px 0px 0px auto;
+                  transition: 0.3s;
+
+                  &:hover {
+                    background: $green;
+                    border-color: $green;
+                    color: #fff;
+                  }
                 }
               }
             }
@@ -584,642 +684,617 @@ main {
     }
   }
 
-  .vip__program__section {
-    background: $backgroundGray;
-    padding-top: 128px;
-
-    .container {
-      .vip__program__section__content {
-        max-width: 710px;
-        margin: 0 auto;
-        text-align: center;
-        color: $firstBlack;
-
-        h4 {
-          font-size: 16px;
-          margin: 0;
-          font-weight: 400;
-        }
-
-        h2 {
-          font-weight: 400;
-          font-size: min(40px, max(20px + 2vw));
-          letter-spacing: 0.1px;
-          margin: 16px 0px 32px 0px;
-        }
-
-        p {
-          color: $secondBlack;
-          line-height: 24px;
-          letter-spacing: 0.2px;
-          margin-bottom: 48px;
-        }
-
-        .vip__program__section__items {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 64px;
-          margin-bottom: 64px;
-
-          .vip__program__section__item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            h6 {
-              font-size: 16px;
-              font-weight: 400;
-              margin: 0;
-            }
-          }
-
-          a {
-            display: block;
-            text-decoration: none;
-            padding: 9px 36px;
-            color: $firstBlack;
-            border: 1px solid $firstBlack;
-            border-radius: $br;
-            width: fit-content;
-            margin: 0px auto 64px auto;
-          }
-
-          @media screen and (max-width: $mobileL) {
-            flex-wrap: wrap;
-          }
-
-          @media screen and (max-width: $mobileM) {
-            gap: 32px;
-          }
-
-          @media screen and (max-width: $mobileXS) {
-            .vip__program__section__item {
-              gap: 4px;
-
-              h6 {
-                font-size: 15px;
-              }
-            }
-          }
-        }
-
-        a {
-          display: block;
-          text-decoration: none;
-          padding: 9px 36px;
-          color: $firstBlack;
-          border: 1px solid $firstBlack;
-          border-radius: $br;
-          width: fit-content;
-          margin: 0px auto 64px auto;
-        }
-      }
-
-      .vip__program__section__cover {
-        img {
-          display: block;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .start__trading__section {
-    padding: 128px 32px 106px;
-
-    .start__trading__section__top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 132px;
-
-      h3 {
-        max-width: 395px;
-        font-weight: 400;
-        font-size: min(48px, max(24px + 2vw));
-        line-height: 48px;
-        letter-spacing: 1px;
-        margin: 0;
-      }
-
-      .start__trading__section__items {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        gap: 96px;
-        margin: 108px 0px 46px 0px;
-
-        .start__trading__section__item {
-
-          h4 {
-            font-size: 20px;
-            line-height: 25px;
-            font-weight: 400;
-            margin: 35px 0px 18px 0px;
-            color: $firstBlack;
-          }
-
-          p {
-            max-width: 257px;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0.2px;
-            color: $secondBlack;
-          }
-
-          &:nth-child(2) {
-            p {
-              font-size: 15px;
-            }
-          }
-        }
-      }
-
-      a {
-        display: block;
-        padding: 10px 34px;
-        border-radius: $br;
-        text-decoration: none;
-        background: $primary;
-        color: $greenBlack;
-        margin-bottom: 32px;
-      }
-
-      .stars {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: $secondBlack;
-
-        div {
-          &:last-child {
-            font-size: 14px;
-          }
-        }
-      }
-
-      @media screen and (max-width:$mobileL) {
-        padding-bottom: 64px;
-
-        .start__trading__section__items {
-          gap: 32px;
-          margin: 64px 0px 32px 0px;
-
-          .start__trading__section__item {
-            h4 {
-              margin: 24px 0px 8px 0px;
-            }
-          }
-        }
-      }
-
-      @media screen and (max-width:$mobileS) {
-        .start__trading__section__items {
-          flex-wrap: wrap;
-          gap: 16px;
-
-          .start__trading__section__item {
-            h4 {
-              margin: 16px 0px 8px;
-            }
-          }
-        }
-      }
-    }
-
-    .start__trading__section__bottom {
-      padding-top: 192px;
-
-      h3 {
-        font-size: min(46px, max(23px + 2vw));
-        line-height: 48px;
-        letter-spacing: 1px;
-        font-weight: 400;
-        margin: 0;
-      }
-
-      p {
-        max-width: 517px;
-        font-size: 16px;
-        letter-spacing: 0.2px;
-        line-height: 24px;
-        color: $secondBlack;
-        margin: 24px 0px;
-      }
-
-      .icons {
-        display: flex;
-        justify-content: flex-start;
-        gap: 36px;
-
-        .icon {
-          .stars {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            padding-top: 19px;
-
-            div {
-              &:last-child {
-                font-size: 14px;
-                padding-left: 7px;
-              }
-            }
-          }
-        }
-      }
-
-      a {
-        display: block;
-        font-size: 16px;
-        line-height: 20px;
-        text-decoration: none;
-        padding-top: 32px;
-        color: $firstBlack;
-      }
-
-      @media screen and (max-width:$mobileL) {
-        padding-top: 64px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-
-        p {
-          max-width: fit-content;
-        }
-      }
-    }
-
-    @media screen and (max-width:$mobileS) {
-      padding: 96px 32px;
-    }
-
-  }
-
-  .crypto__news__section {
-    padding-top: 128px;
-
-    h3 {
-      font-size: 31px;
-      line-height: 40px;
-      font-weight: 400;
-      color: $firstBlack;
-      margin: 0;
-      text-align: center;
-    }
-
-    .crypto__news__section__items {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      margin: 64px 0px;
-
-      .news__item {
-        box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
-        border-radius: 8px;
-        max-width: 357px;
-
-        .news__item__cover {
-          img {
-            display: block;
-            width: 100%;
-          }
-        }
-
-        .news__item__content {
-          padding: 16px 0px 32px 16px;
-
-          .news__item__content__info {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-
-            h5 {
-              font-size: 12px;
-              line-height: 12px;
-              font-weight: 400;
-              color: $firstBlack;
-              background: #BDFFEB;
-              padding: 2px 8px 6px;
-              margin: 0;
-            }
-
-            span {
-              font-size: 12px;
-              line-height: 12px;
-              font-weight: 400;
-              color: $firstBlack;
-              letter-spacing: 1px;
-              text-transform: uppercase;
-            }
-          }
-
-          h3 {
-            font-size: 24px;
-            line-height: 30px;
-            text-align: left;
-            color: $firstBlack;
-            font-weight: 400;
-            margin: 22px 0px 32px 0px;
-            max-width: 300px;
-            min-height: 60px;
-          }
-
-          a {
-            text-decoration: none;
-            color: $firstBlack;
-            font-size: 16px;
-            line-height: 20px;
-            text-align: left;
-          }
-
-          @media screen and (max-width: 890px) {
-            padding: 8px 0px 24px 4px;
-
-            .news__item__content__info {
-              gap: 8px;
-
-              h5,
-              span {
-                font-size: 10px;
-              }
-            }
-
-            h3 {
-              font-size: 20px;
-              line-height: 24px;
-              margin: 8px 0px 16px 0px;
-            }
-
-            a {
-              margin-bottom: 32px;
-            }
-
-          }
-        }
-      }
-
-      @media screen and (max-width:850px) {
-        gap: 8px;
-      }
-
-      @media screen and (max-width:685px) {
-        flex-wrap: wrap;
-        margin: 32px;
-      }
-    }
-
-    a {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      font-size: 15px;
-      line-height: 20px;
-      color: $firstBlack;
-      margin-bottom: 64px;
-    }
-
-    .crypto__news__section__social__media {
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      gap: 32px;
-
-      div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        h5 {
-          font-size: 16px;
-          line-height: 20px;
-          font-weight: 400;
-          color: $firstBlack;
-          margin: 8px;
-        }
-      }
-
-      @media screen and (max-width: $mobileL) {
-        gap: 16px;
-
-        h5 {
-          display: none;
-        }
-      }
-    }
-
-    @media screen and (max-width:$tablet) {
-      padding-top: 64px;
-    }
-
-    @media screen and (max-width:$mobileM) {
-      a {
-        margin-bottom: 32px;
-      }
-    }
-
-  }
-
-  .create__account__section {
-    padding: 224px 0px 224px 88px;
-
-    h3 {
-      font-size: 46px;
-      line-height: 48px;
-      font-weight: 400;
-      max-width: 480px;
-      letter-spacing: 1px;
-      margin: 0px 0px 48px;
-    }
-
-    a {
-      margin-top: 48px;
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0.1px;
-      text-decoration: none;
-      color: $greenBlack;
-      padding: 9px 33px 10px;
-      text-align: center;
-      background: $primary;
-    }
-
-    @media screen and (max-width: $mobileL) {
-      padding: 192px 0px 128px 0px;
-      text-align: center;
-
-      h3 {
-        font-size: 32px;
-        margin: 0 auto 32px auto;
-      }
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @media screen and (max-width: $mobileL) {
-
-    .markets__section,
-    .template__section {
-      margin-bottom: 64px;
-    }
-
-    .template__section {
-      .template__section__content {
-        h4 {
-          text-align: center;
-        }
-      }
-    }
-
-    .markets__section {
-      .why__btc__markets {
-        .wbm__items {
-          gap: 32px;
-        }
-      }
-    }
-  }
-
-  hr {
-    height: 1px;
-    background: $hrGray;
-  }
+	.vip__program__section {
+		background: #fafafa;
+		padding-top: 128px;
+
+		@media screen and (max-width: $mobileL) {
+			padding-top: 64px;
+		}
+
+		.container {
+			.vip__program__section__content {
+				max-width: 710px;
+				margin: 0 auto;
+				text-align: center;
+				color: $firstBlack;
+
+				h4 {
+					font-size: 16px;
+					font-weight: 400;
+					margin: 0;
+				}
+
+				h2 {
+					font-weight: 400;
+					font-size: min(40px, max(20px + 2vw));
+					letter-spacing: 0.1px;
+					margin: 16px 0px 32px 0px;
+				}
+
+				p {
+					color: $secondBlack;
+					line-height: 24px;
+					letter-spacing: 0.2px;
+					margin-bottom: 48px;
+				}
+
+				.vip__program__section__items {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 64px;
+					margin-bottom: 64px;
+
+					.vip__program__section__item {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+
+						h6 {
+							font-size: 16px;
+							font-weight: 400;
+							margin: 0;
+						}
+					}
+
+					@media screen and (max-width: $mobileL) {
+						flex-wrap: wrap;
+					}
+
+					@media screen and (max-width: $mobileM) {
+						gap: 32px;
+					}
+
+					@media screen and (max-width: $mobileXS) {
+						.vip__program__section__item {
+							gap: 4px;
+
+							h6 {
+								font-size: 15px;
+							}
+						}
+					}
+				}
+
+				a {
+					display: block;
+					text-decoration: none;
+					padding: 9px 33px;
+					color: $firstBlack;
+					border: 1px solid $firstBlack;
+					border-radius: $br;
+					width: fit-content;
+					margin: 0px auto 64px auto;
+					transition: 0.3s;
+
+					&:hover {
+						background: $greenBlack;
+						border-color: $greenBlack;
+						color: #fff;
+					}
+				}
+			}
+
+			.vip__program__section__cover {
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.three__easy__steps__section {
+		padding-top: 128px;
+		padding-bottom: 128px;
+
+		@media screen and (max-width: $mobileL) {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		.three__easy__steps {
+			max-width: 900px;
+			margin: 0 auto;
+
+			h2 {
+				font-weight: 400;
+				font-size: min(40px, max(20px + 2vw));
+				letter-spacing: 0.1px;
+				margin: 16px 0px 64px 0px;
+				text-align: center;
+			}
+
+			.three__easy__steps__items {
+				display: flex;
+				justify-content: center;
+				gap: 64px;
+				margin-bottom: 64px;
+
+				.three__easy__steps__item {
+					text-align: center;
+					width: 278px;
+
+					.icon {
+						padding: 16px;
+						background: #FCFBF8;
+						width: 72px;
+						height: 72px;
+						border-radius: $br;
+						margin: 0 auto;
+					}
+
+					h6 {
+						font-size: 20px;
+						color: $firstBlack;
+						font-weight: 400;
+						margin: 16px 0px;
+					}
+
+					p {
+						color: $secondBlack;
+						line-height: 24px;
+						letter-spacing: 0.2px;
+						font-size: 15px;
+					}
+				}
+
+				@media screen and (max-width: $mobileL) {
+					flex-wrap: wrap;
+				}
+
+				@media screen and (max-width: $mobileM) {
+					gap: 32px;
+				}
+			}
+
+			a {
+				display: block;
+				text-decoration: none;
+				padding: 9px 33px;
+				background: $primary;
+				color: $greenBlack;
+				width: fit-content;
+				border-radius: $br;
+				margin: 0 auto 32px auto;
+				transition: 0.3s;
+
+				&:hover {
+					background: $green;
+					border-color: $green;
+					color: #fff;
+				}
+			}
+
+			.three__easy__steps__stars {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				user-select: none;
+				color: $secondBlack;
+			}
+		}
+	}
+
+	.trade__on__the__go {
+		h2 {
+			font-weight: 400;
+			font-size: min(40px, max(20px + 2vw));
+			letter-spacing: 0.1px;
+			margin: 0px 0px 32px 0px;
+			text-align: center;
+		}
+
+		p {
+			color: $secondBlack;
+			line-height: 24px;
+			letter-spacing: 0.2px;
+			font-size: 15px;
+			text-align: center;
+			max-width: 900px;
+			margin: 0 auto 32px auto;
+		}
+
+		.totg__store {
+			display: flex;
+			justify-content: center;
+			gap: 32px;
+
+			@media screen and (max-width: $mobileM) {
+				flex-wrap: wrap;
+			}
+
+			.app__store,
+			.google__play {
+				img {
+					display: block;
+					width: 150px;
+					height: 40px;
+				}
+
+				.app__store__stars,
+				.google__play__stars {
+					display: flex;
+					gap: 8px;
+					margin-top: 16px;
+
+					img {
+						width: unset;
+						height: unset;
+					}
+				}
+			}
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 9px 33px;
+			color: $firstBlack;
+			border: 1px solid $firstBlack;
+			border-radius: $br;
+			width: fit-content;
+			margin: 32px auto 0px auto;
+			transition: 0.3s;
+
+			&:hover {
+				background: $greenBlack;
+				border-color: $greenBlack;
+				color: #fff;
+			}
+		}
+	}
+
+	.latest__news__section {
+		padding-top: 128px;
+		padding-bottom: 128px;
+
+		@media screen and (max-width: $mobileL) {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		h2 {
+			font-weight: 400;
+			font-size: min(40px, max(20px + 2vw));
+			letter-spacing: 0.1px;
+			margin: 0px 0px 32px 0px;
+			text-align: center;
+		}
+
+		.latest__news__items {
+			display: flex;
+			justify-content: space-between;
+			gap: 32px;
+			margin-bottom: 64px;
+
+			.latest__news__item {
+				box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s;
+
+				.latest__news__item__cover {
+					max-width: 357px;
+					max-height: 148px;
+					overflow: hidden;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+				}
+
+				.latest__news__item__date__status {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin: 16px 0px;
+					padding: 0px 16px;
+
+					@media screen and (max-width: $mobileXS) {
+						flex-wrap: wrap;
+
+						p {
+							width: 100%;
+							text-align: center;
+
+							&:first-child {
+								margin-bottom: 8px;
+							}
+						}
+					}
+
+					p {
+						margin: 0;
+						color: $firstBlack;
+
+						&:first-child {
+							background: #BDFFEB;
+							padding: 6px;
+							border-radius: $br;
+							color: $greenBlack;
+							font-size: 15px;
+						}
+					}
+				}
+
+				h4 {
+					font-size: min(24px, max(12px + 2vw));
+					margin: 0;
+					font-weight: 400;
+					max-width: 350px;
+					padding: 0px 16px;
+
+					a {
+						color: $firstBlack;
+						text-decoration: none;
+					}
+				}
+
+				.read__more {
+					display: block;
+					margin-top: 16px;
+					text-decoration: none;
+					color: $firstBlack;
+					padding: 0px 16px 16px 16px;
+					transition: 0.3s;
+				}
+
+				&:hover {
+					box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.3);
+
+					.latest__news__item__cover {
+						img {
+							transform: scale(1.1);
+						}
+					}
+
+					h4 {
+						a {
+							color: $greenBlack;
+						}
+					}
+
+					.read__more {
+						color: $green;
+					}
+				}
+			}
+
+			@media screen and (max-width: $tablet) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		.check__out__link {
+			display: block;
+			text-decoration: none;
+			text-align: center;
+			color: $firstBlack;
+			margin-bottom: 64px;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 32px;
+			margin: 0 auto;
+
+			@media screen and (max-width: $mobileL) {
+				flex-wrap: wrap;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				text-decoration: none;
+				font-size: 16px;
+				color: $firstBlack;
+				transition: 0.3s;
+
+				svg {
+					path {
+						transition: 0.3s;
+					}
+				}
+
+				&:hover {
+					color: $green;
+
+					svg {
+						path {
+							fill: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.before__footer {
+		h2 {
+			text-align: center;
+			font-size: min(40px, max(20px + 2vw));
+			font-weight: 400;
+			margin: 0px auto 32px auto;
+			max-width: 420px;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 9px 33px;
+			background: $primary;
+			color: $greenBlack;
+			width: fit-content;
+			border-radius: $br;
+			margin: 0 auto 32px auto;
+			transition: 0.3s;
+
+			&:hover {
+				background: $green;
+				border-color: $green;
+				color: #fff;
+			}
+		}
+	}
+
+	@media screen and (max-width: $mobileL) {
+		.markets__section {
+			margin-bottom: 64px;
+		}
+
+		.template__section {
+			margin-bottom: 64px;
+
+			.template__section__content {
+				h4 {
+					text-align: center;
+				}
+			}
+		}
+
+		.markets__section {
+			.why__btc__markets {
+				.wbm__items {
+					gap: 32px;
+				}
+			}
+		}
+	}
 }
 
 footer {
-  .footer__section {
-    .footer__section__logo {
-      padding-bottom: 64px;
-    }
+	margin-top: 128px;
 
-    .footer__section__content {
-      display: flex;
-      gap: 128px;
+	.footer {
+		display: flex;
+		gap: 64px;
 
-      div {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+		.footer__item {
+			flex: 1 1 227px;
 
-        h6 {
-          font-size: 12px;
-          line-height: 12px;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          color: $firstBlack;
-        }
+			h4 {
+				margin-top: 0;
+				margin-bottom: 32px;
+				color: $firstBlack;
+				font-weight: 400;
+				font-size: 16px;
+			}
 
-        a {
-          text-decoration: none;
-          color: $footerBlack;
-          font-size: 12px;
-          line-height: 21px;
-        }
+			ul {
+				li {
+					list-style-type: none;
 
-        div {
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-          gap: 8px;
+					a {
+						display: block;
+						text-decoration: none;
+						color: $footerBlack;
+						margin-bottom: 16px;
 
-        }
+						svg {
+							path {
+								fill: $footerBlack;
+							}
+						}
 
-        img {
-          &:first-of-type {
-            max-width: 72px;
-          }
+						&:hover {
+							text-decoration: underline;
+						}
+					}
 
-          &:last-of-type {
-            max-width: 81px;
-          }
-        }
-      }
+					img {
+						width: 120px;
+						height: 40px;
+						display: block;
+						margin-bottom: 8px;
+					}
+				}
+			}
 
-      @media screen and (max-width:$tablet) {
-        gap: 88px;
-      }
+			&:nth-child(4) {
+				li {
+					a {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+					}
+				}
+			}
+		}
 
-      @media screen and (max-width:$mobileL) {
-        gap: 32px;
-      }
+		@media screen and (max-width: $tablet) {
+			flex-wrap: wrap;
+		}
 
-      @media screen and (max-width:$mobileM) {
-        gap: 16px;
+		@media screen and (max-width: $mobileL) {
+			text-align: center;
 
-        div {
-          gap: 8px;
+			.footer__item {
+				flex: 1 1 100%;
 
-          img {
-            &:first-of-type {
-              max-width: 62px;
-            }
+				li {
+					img {
+						margin: 0px auto 8px auto;
+					}
+				}
 
-            &:last-of-type {
-              max-width: 71px;
-            }
-          }
-        }
-      }
+				&:nth-child(4) {
+					li {
+						a {
+							justify-content: center;
+						}
+					}
+				}
+			}
+		}
+	}
 
-      @media screen and (max-width:$mobileS) {
-        flex-wrap: wrap;
-        gap: 32px;
-        flex: 1 1 50%;
-      }
-    }
+	.footer__info {
+		text-align: center;
+		font-size: 14px;
+		color: $secondBlack;
+		margin-top: 128px;
+		margin-bottom: 64px;
 
-    .footer__section__info {
-      padding: 160px 0px 64px 0px;
-      text-align: center;
+		p {
+			margin: 0;
+		}
 
-      span,
-      p {
-        font-size: 12px;
-        line-height: 12px;
-        letter-spacing: 1px;
-      }
+		.footer__info__top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 32px;
+			margin-bottom: 16px;
 
-      span {
-        &:nth-child(1) {
-          padding-left: 21px;
-        }
-      }
+			@media screen and (max-width: $mobileL) {
+				flex-wrap: wrap;
+				gap: 16px;
 
-      p {
-        margin-top: 20px;
-      }
+				p {
+					width: 100%;
+				}
+			}
+		}
 
-      @media screen and (max-width:$mobileL) {
-        padding: 96px 0px 32px 0px;
-      }
-    }
-  }
+		.footer__info__bottom {
+			font-size: 12px;
+		}
+	}
 }
-
-
 
 //normalize css
 
