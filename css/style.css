@@ -697,20 +697,18 @@ main .trade__on__the__go h2 {
   font-size: min(40px, max(20px + 2vw));
   letter-spacing: 0.1px;
   margin: 0px 0px 32px 0px;
-  text-align: center;
 }
 main .trade__on__the__go p {
   color: #27272a;
   line-height: 24px;
   letter-spacing: 0.2px;
   font-size: 15px;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 32px auto;
+  max-width: 517px;
+  margin-bottom: 32px;
 }
 main .trade__on__the__go .totg__store {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 32px;
 }
 @media screen and (max-width: 580px) {
@@ -748,7 +746,7 @@ main .trade__on__the__go a {
   border-radius: 4px;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 32px auto 0px auto;
+  margin-top: 32px;
   transition: 0.3s;
 }
 main .trade__on__the__go a:hover {
@@ -881,11 +879,6 @@ main .latest__news__section .social {
   gap: 32px;
   margin: 0 auto;
 }
-@media screen and (max-width: 768px) {
-  main .latest__news__section .social {
-    flex-wrap: wrap;
-  }
-}
 main .latest__news__section .social a {
   display: flex;
   align-items: center;
@@ -903,6 +896,11 @@ main .latest__news__section .social a:hover {
 }
 main .latest__news__section .social a:hover svg path {
   fill: #10b981;
+}
+@media screen and (max-width: 768px) {
+  main .latest__news__section .social a span {
+    display: none;
+  }
 }
 main .before__footer h2 {
   text-align: center;
@@ -936,6 +934,9 @@ main .before__footer a:hover {
     margin-bottom: 64px;
   }
   main .template__section .template__section__content h4 {
+    text-align: center;
+  }
+  main .template__section .template__section__content h2 {
     text-align: center;
   }
   main .markets__section .why__btc__markets .wbm__items {

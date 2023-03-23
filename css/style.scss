@@ -884,7 +884,6 @@ main {
 			font-size: min(40px, max(20px + 2vw));
 			letter-spacing: 0.1px;
 			margin: 0px 0px 32px 0px;
-			text-align: center;
 		}
 
 		p {
@@ -892,14 +891,13 @@ main {
 			line-height: 24px;
 			letter-spacing: 0.2px;
 			font-size: 15px;
-			text-align: center;
-			max-width: 900px;
-			margin: 0 auto 32px auto;
+			max-width: 517px;
+      margin-bottom: 32px;
 		}
 
 		.totg__store {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			gap: 32px;
 
 			@media screen and (max-width: $mobileM) {
@@ -936,7 +934,7 @@ main {
 			border: 1px solid $firstBlack;
 			border-radius: $br;
 			width: fit-content;
-			margin: 32px auto 0px auto;
+      margin-top: 32px;
 			transition: 0.3s;
 
 			&:hover {
@@ -1091,10 +1089,6 @@ main {
 			gap: 32px;
 			margin: 0 auto;
 
-			@media screen and (max-width: $mobileL) {
-				flex-wrap: wrap;
-			}
-
 			a {
 				display: flex;
 				align-items: center;
@@ -1119,6 +1113,12 @@ main {
 						}
 					}
 				}
+
+        @media screen and (max-width:$mobileL) {
+          span {
+            display: none;
+          }
+        }
 			}
 		}
 	}
@@ -1163,6 +1163,10 @@ main {
 				h4 {
 					text-align: center;
 				}
+
+        h2 {
+          text-align: center;
+        }
 			}
 		}
 
